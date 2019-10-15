@@ -1,0 +1,5 @@
+#! /usr/bin/env node
+
+const { iconFontCreator } = require('../lib/icon-font-creator');
+
+iconFontCreator();

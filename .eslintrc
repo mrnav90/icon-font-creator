@@ -1,0 +1,43 @@
+{
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {}
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-useless-constructor": "off",
+    "indent": ["error", 2 ],
+    "quotes": ["error", "single" ],
+    "no-unused-vars": ["error" ],
+    "no-extra-semi": ["error" ],
+    "no-unexpected-multiline": ["error"],
+    "one-var": ["error", "never" ],
+    "padded-blocks": ["error", "never"],
+    "no-trailing-spaces": ["error", { "skipBlankLines": false } ],
+    "no-console": ["error", { allow: ["error"] }],
+    "linebreak-style": [0, {"allow": ["windows"]}],
+    "class-methods-use-this": 0,
+    "no-underscore-dangle": 0,
+    "max-lines": [2, {
+      max: 300,
+      skipBlankLines: true,
+      skipComments: true
+    }],
+    "max-lines-per-function": [2, {
+      max: 50,
+      skipBlankLines: true,
+      skipComments: true,
+      IIFEs: true
+    }],
+    "max-params": [2, 3],
+    "max-depth": [2, 4],
+    "max-statements": [2, 10],
+    "max-statements-per-line": [2, { max: 1 }],
+    "quote-props": [0, "always"]
+  }
+}
