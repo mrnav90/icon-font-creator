@@ -36,7 +36,7 @@
     }],
     "max-params": [2, 3],
     "max-depth": [2, 4],
-    "max-statements": [2, 10],
+    "max-statements": [2, 15],
     "max-statements-per-line": [2, { max: 1 }],
     "quote-props": [0, "always"]
   }

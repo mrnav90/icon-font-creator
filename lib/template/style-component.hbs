@@ -1,1 +1,42 @@
-import styled, { css } from 'styled-components';
+import styled, {
+  css,
+  createGlobalStyle,
+} from 'styled-components';
+import fontEOT from './{{fontName}}.eot';
+import fontWOFF from './{{fontName}}.woff';
+import fontTTF from './{{fontName}}.ttf';
+
+export const fontIconStyled = createGlobalStyle`
+  @font-face {
+    font-family: "{{fontName}}" !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    src: url(${fontEOT});
+    src:
+      url(${fontEOT}) format('embedded-opentype'),
+      url(${fontTTF}) format('truetype'),
+      url(${fontWOFF}) format('woff');
+  }
+`;
+
+const fontStyled = css`
+  font-family: "{{fontName}}" !important;
+  font-size: ${props => props.size || '22px'};
+  color: ${props => props.color || '#000'};
+  vertical-align: ${props => props.vertical || 'middle'};
+`;
+
+{{# each listIcons }}
+export const {{this.name}} = styled.{{../baseTag}}`
+  ${fontStyled}
+  &:before {
+    content: "\\{{ this.value }}";
+  }
+`;
+
+{{/ each }}
